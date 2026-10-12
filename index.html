@@ -1,1 +1,157 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redeemed Mobile Mechanic</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #161b20;
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      background: #101317;
+      text-align: center;
+      padding: 35px 16px;
+      border-bottom: 4px solid #d99b35;
+    }
+    h1 { color: #f1b44d; margin-bottom: 8px; }
+    h2 { color: #f1b44d; }
+    section { padding: 25px 20px; max-width: 750px; margin: auto; }
+    .button {
+      display: inline-block;
+      background: #e5a43d;
+      color: #111;
+      padding: 13px 22px;
+      margin: 8px 5px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .service {
+      background: #252c33;
+      margin: 10px 0;
+      padding: 14px;
+      border-left: 4px solid #e5a43d;
+      border-radius: 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0 16px;
+      border-radius: 5px;
+      border: 1px solid #777;
+      font-size: 16px;
+    }
+    label { font-weight: bold; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #101317;
+    }
+    a { color: #f1b44d; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>REDEEMED MOBILE MECHANIC</h1>
+  <p>Mobile Automotive Repair & Roadside Assistance</p>
+  <p>Serving Southwest Missouri</p>
+  <a class="button" href="tel:+14178523028">Call Now</a>
+  <a class="button" href="#request">Request Service</a>
+</header>
+
+<section>
+  <h2>We Come to You!</h2>
+  <p>Redeemed Mobile Mechanic provides convenient mobile automotive repair, roadside assistance, and small-engine repair services.</p>
+
+  <h2>Our Services</h2>
+  <div class="service">Mobile Mechanic Repairs</div>
+  <div class="service">Vehicle Diagnostics</div>
+  <div class="service">Battery & Starting Problems</div>
+  <div class="service">Roadside Assistance</div>
+  <div class="service">Small-Engine Repair</div>
+
+  <h2>Service Area</h2>
+  <p>Springfield, Missouri and surrounding areas, including Greene, Stone, and Taney counties.</p>
+</section>
+
+<section id="request">
+  <h2>Request Service</h2>
+  <p>Complete the form below to prepare an email requesting service.</p>
+
+  <form id="serviceForm">
+    <label for="name">Your Name</label>
+    <input id="name" required>
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" required>
+
+    <label for="location">Your Location</label>
+    <input id="location" required>
+
+    <label for="service">Service Needed</label>
+    <select id="service" required>
+      <option value="">Choose a service</option>
+      <option>Mobile Mechanic Repair</option>
+      <option>Roadside Assistance</option>
+      <option>Vehicle Diagnostics</option>
+      <option>Small-Engine Repair</option>
+      <option>Other</option>
+    </select>
+
+    <label for="details">Vehicle & Problem Details</label>
+    <textarea id="details" rows="5" required></textarea>
+
+    <button class="button" type="submit">
+      Prepare Service Request Email
+    </button>
+  </form>
+  <p id="message" role="status"></p>
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>Phone: <a href="tel:+14178523028">417-852-3028</a></p>
+  <p>Email: <a href="mailto:417redeemed@gmail.com">417redeemed@gmail.com</a></p>
+</section>
+
+<footer>
+  <p>Redeemed Mobile Mechanic</p>
+  <p>Serving the 417 Area</p>
+</footer>
+
+<script>
+document.getElementById("serviceForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const get = id => document.getElementById(id).value.trim();
+
+  const subject = "Service Request - Redeemed Mobile Mechanic";
+  const body =
+    "Name: " + get("name") + "\n" +
+    "Phone: " + get("phone") + "\n" +
+    "Location: " + get("location") + "\n" +
+    "Service: " + get("service") + "\n" +
+    "Details: " + get("details");
+
+  const link = "mailto:417redeemed@gmail.com?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  document.getElementById("message").textContent =
+    "Your email app should open. Press Send there to submit your request.";
+
+  window.location.href = link;
+});
+</script>
+</body>
+</html>
+
