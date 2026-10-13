@@ -122,7 +122,44 @@
   <p>Phone: <a href="tel:+14178523028">417-852-3028</a></p>
   <p>Email: <a href="mailto:417redeemed@gmail.com">417redeemed@gmail.com</a></p>
 </section>
-
+<section id="service-contract">
+  <h2>Service Contract & Customer Signature</h2>
+  <p>By signing, I acknowledge that I am requesting service from Redeemed Mobile Mechanic and agree to the terms of the service contract provided to me.</p>
+  <form id="contractForm">
+    <label>Customer Name<br><input id="contractName" required></label><br>
+    <label>Vehicle Year, Make & Model<br><input id="contractVehicle" required></label><br>
+    <label>Customer Email<br><input id="contractEmail" type="email" required></label><br>
+    <label><input id="contractAgree" type="checkbox" required> I have read and agree to the service contract.</label>
+    <p>Sign with your finger below:</p>
+    <canvas id="signaturePad" width="320" height="160" style="border:2px solid #333;max-width:100%;touch-action:none;background:white"></canvas><br>
+    <button type="button" id="clearSignature">Clear Signature</button>
+    <button type="submit">Prepare Signed Contract</button>
+    <p id="contractMessage" role="status"></p>
+  </form>
+</section>
+<script>
+(function(){
+const canvas=document.getElementById('signaturePad');
+const ctx=canvas.getContext('2d');
+let drawing=false,signed=false;
+function position(e){const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};}
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();drawing=true;canvas.setPointerCapture(e.pointerId);const p=position(e);ctx.beginPath();ctx.moveTo(p.x,p.y);});
+canvas.addEventListener('pointermove',e=>{if(!drawing)return;e.preventDefault();const p=position(e);ctx.lineWidth=2;ctx.lineCap='round';ctx.lineTo(p.x,p.y);ctx.stroke();signed=true;});
+canvas.addEventListener('pointerup',()=>drawing=false);
+canvas.addEventListener('pointercancel',()=>drawing=false);
+document.getElementById('clearSignature').onclick=()=>{ctx.clearRect(0,0,canvas.width,canvas.height);signed=false;};
+document.getElementById('contractForm').onsubmit=e=>{
+e.preventDefault();
+if(!signed){document.getElementById('contractMessage').textContent='Please sign before continuing.';return;}
+const name=document.getElementById('contractName').value;
+const vehicle=document.getElementById('contractVehicle').value;
+const email=document.getElementById('contractEmail').value;
+const body='Signed contract request\nCustomer: '+name+'\nVehicle: '+vehicle+'\nEmail: '+email+'\nCustomer accepted contract terms.\nSignature must be saved separately; this email does not attach it.';
+document.getElementById('contractMessage').textContent='Your email app will open. This does not send or attach your signature automatically.';
+window.location.href='mailto:417redeemed@gmail.com?subject='+encodeURIComponent('Service Contract - '+name)+'&body='+encodeURIComponent(body);
+};
+})();
+</script>
 <footer>
   <p>Redeemed Mobile Mechanic</p>
   <p>Serving the 417 Area</p>
