@@ -1,194 +1,47 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Redeemed Mobile Mechanic</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #161b20;
-      color: white;
-      line-height: 1.6;
-    }
-    header {
-      background: #101317;
-      text-align: center;
-      padding: 35px 16px;
-      border-bottom: 4px solid #d99b35;
-    }
-    h1 { color: #f1b44d; margin-bottom: 8px; }
-    h2 { color: #f1b44d; }
-    section { padding: 25px 20px; max-width: 750px; margin: auto; }
-    .button {
-      display: inline-block;
-      background: #e5a43d;
-      color: #111;
-      padding: 13px 22px;
-      margin: 8px 5px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-    .service {
-      background: #252c33;
-      margin: 10px 0;
-      padding: 14px;
-      border-left: 4px solid #e5a43d;
-      border-radius: 4px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 7px 0 16px;
-      border-radius: 5px;
-      border: 1px solid #777;
-      font-size: 16px;
-    }
-    label { font-weight: bold; }
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #101317;
-    }
-    a { color: #f1b44d; }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Redeemed Mobile Mechanic</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f5f6f8,#0d1015);--surface:light-dark(#fff,#151a22);--text:light-dark(#11151c,#f4f6f8);--muted:light-dark(#5c6572,#aab3c0);--accent:#e23b32;--accent2:#ff6a3d;--line:light-dark(#e3e6eb,#29313c)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}#app{min-height:100vh;background:var(--bg)}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand-logo{height:58px;width:auto;display:block;object-fit:contain}.brand{font-weight:900;letter-spacing:-.04em;font-size:1.25rem}.brand span{color:var(--accent)}.links{display:flex;gap:24px;color:var(--muted);font-size:.95rem}.cta{background:var(--accent);color:#fff;padding:12px 18px;border-radius:8px;font-weight:800}.hero{padding:72px 0 82px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:900;color:var(--accent)}h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.91;letter-spacing:-.065em;margin:14px 0 22px;max-width:780px}h1 em{font-style:normal;color:var(--accent)}.hero p{font-size:1.15rem;line-height:1.65;color:var(--muted);max-width:620px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 20px;border-radius:8px;font-weight:800;border:1px solid var(--line)}.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.secondary{background:var(--surface)}.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 18px 60px #0002}.card h2{margin:0 0 8px;font-size:1.55rem}.card p{margin:0 0 22px}.field{margin:10px 0}.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}.field textarea{min-height:90px;resize:vertical}.submit{width:100%;padding:14px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-weight:900;font-size:1rem;cursor:pointer}.section{padding:78px 0}.section.alt{background:var(--surface)}.section h2{font-size:2.5rem;letter-spacing:-.04em;margin:0 0 12px}.lead{color:var(--muted);max-width:650px;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}.service{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}.icon{font-size:1.6rem}.service h3{margin:16px 0 8px}.service p{color:var(--muted);line-height:1.6;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:32px}.step strong{font-size:2.4rem;color:var(--accent)}.step h3{margin:8px 0}.step p{color:var(--muted);line-height:1.6}.banner{background:linear-gradient(120deg,#b91f27,#ed4b32);color:#fff;border-radius:20px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:20px}.banner h2{margin:0;font-size:2.2rem}.banner p{margin:8px 0 0;opacity:.85}.banner .btn{background:#fff;color:#9e1d24;border-color:#fff}.footer{padding:34px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}.mobile-menu{display:none}@media(max-width:800px){.brand-logo{height:48px}.links{display:none}.mobile-menu{display:block;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px;border-radius:7px}.hero{grid-template-columns:1fr;padding:45px 0 60px}.grid,.steps{grid-template-columns:1fr}.banner{display:block}.banner .btn{display:inline-block;margin-top:20px}}
+
+/* Consistent light red-and-white branding */
+:root{color-scheme:light;--bg:#f7f8fa;--surface:#fff;--text:#151b24;--muted:#56616e;--accent:#c72d31;--accent2:#ed5a45;--line:#dfe3e8}
+.contract-wrap{padding:28px;background:#fff;border:1px solid var(--line);border-radius:16px;max-width:860px;margin:30px auto}.contract-wrap h3{margin:22px 0 8px}.contract-wrap p,.contract-wrap li{line-height:1.6}.contract-wrap label{display:block;margin:14px 0 5px;font-weight:700}.contract-wrap input,.contract-wrap textarea{width:100%;padding:12px;border:1px solid #bcc5ce;border-radius:8px;font:inherit}.signature-pad{width:100%;height:180px;touch-action:none;border:2px dashed #9ca3af;border-radius:8px;background:white}.signature-actions{display:flex;gap:12px;margin:10px 0}.signature-actions button{padding:10px 16px;cursor:pointer}.contract-note{font-size:.9rem;color:#555}.mobile-menu[aria-expanded=true]+.mobile-links{display:flex}.mobile-links{display:none;position:absolute;right:4%;top:82px;background:white;z-index:3;padding:20px;box-shadow:0 12px 25px #0002;flex-direction:column;gap:14px;border-radius:10px}
+</style>
 </head>
 <body>
-<header>
-  <h1>REDEEMED MOBILE MECHANIC</h1>
-  <p>Mobile Automotive Repair & Roadside Assistance</p>
-  <p>Serving Southwest Missouri</p>
-  <a class="button" href="tel:+14178523028">Call Now</a>
-  <a class="button" href="#request">Request Service</a>
-</header>
-
-<section>
-  <h2>We Come to You!</h2>
-  <p>Redeemed Mobile Mechanic provides convenient mobile automotive repair, roadside assistance, and small-engine repair services.</p>
-
-  <h2>Our Services</h2>
-  <div class="service">Mobile Mechanic Repairs</div>
-  <div class="service">Vehicle Diagnostics</div>
-  <div class="service">Battery & Starting Problems</div>
-  <div class="service">Roadside Assistance</div>
-  <div class="service">Small-Engine Repair</div>
-
-  <h2>Service Area</h2>
-  <p>Springfield, Missouri and surrounding areas, including Greene, Stone, and Taney counties.</p>
-</section>
-
-<section id="request">
-  <h2>Request Service</h2>
-  <p>Complete the form below to prepare an email requesting service.</p>
-
-  <form id="serviceForm">
-    <label for="name">Your Name</label>
-    <input id="name" required>
-
-    <label for="phone">Phone Number</label>
-    <input id="phone" type="tel" required>
-
-    <label for="location">Your Location</label>
-    <input id="location" required>
-
-    <label for="service">Service Needed</label>
-    <select id="service" required>
-      <option value="">Choose a service</option>
-      <option>Mobile Mechanic Repair</option>
-      <option>Roadside Assistance</option>
-      <option>Vehicle Diagnostics</option>
-      <option>Small-Engine Repair</option>
-      <option>Other</option>
-    </select>
-
-    <label for="details">Vehicle & Problem Details</label>
-    <textarea id="details" rows="5" required></textarea>
-
-    <button class="button" type="submit">
-      Prepare Service Request Email
-    </button>
-  </form>
-  <p id="message" role="status"></p>
-</section>
-
-<section>
-  <h2>Contact Us</h2>
-  <p>Phone: <a href="tel:+14178523028">417-852-3028</a></p>
-  <p>Email: <a href="mailto:417redeemed@gmail.com">417redeemed@gmail.com</a></p>
-</section>
-<section id="service-contract">
-  <h2>Service Contract & Customer Signature</h2>
-  <p>By signing, I acknowledge that I am requesting service from Redeemed Mobile Mechanic and agree to the terms of the service contract provided to me.</p>
-  <form id="contractForm">
-    <label>Customer Name<br><input id="contractName" required></label><br>
-    <label>Vehicle Year, Make & Model<br><input id="contractVehicle" required></label><br>
-    <label>Customer Email<br><input id="contractEmail" type="email" required></label><br>
-    <label><input id="contractAgree" type="checkbox" required> I have read and agree to the service contract.</label>
-    <p>Sign with your finger below:</p>
-    <canvas id="signaturePad" width="320" height="160" style="border:2px solid #333;max-width:100%;touch-action:none;background:white"></canvas><br>
-    <button type="button" id="clearSignature">Clear Signature</button>
-    <button type="submit">Prepare Signed Contract</button>
-    <p id="contractMessage" role="status"></p>
-  </form>
-</section>
+<div id="app">
+<header class="wrap nav"><a aria-label="Redeemed Mobile Mechanic home" href="#top"><img alt="Redeemed Mobile Mechanic logo" class="brand-logo" src="data:image/webp;base64,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"/></a><nav class="links"><a href="#services">Services</a><a href="#how">How It Works</a><a href="#contact">Contact</a><a href="#agreement">Service Agreement</a></nav><a class="cta" href="#contact">Request Service</a><button aria-controls="mobileLinks" aria-expanded="false" class="mobile-menu" onclick="document.querySelector('.links').classList.toggle('show')" type="button">Menu</button><nav class="mobile-links" id="mobileLinks"><a href="#services">Services</a><a href="#how">How It Works</a><a href="#contact">Request Service</a><a href="#agreement">Service Agreement</a><a href="tel:4178523028">Call Us</a></nav></header>
+<main id="top">
+<section class="wrap hero"><div><div class="eyebrow">Mobile auto repair • We come to you</div><h1>Reliable repairs.<br/><em>Right where you are.</em></h1><p>Redeemed Mobile Mechanic brings professional automotive service to your driveway, workplace, or roadside—saving you the hassle of a shop visit.</p><div class="buttons"><a class="btn primary" href="#contact">Get a Service Quote</a><a class="btn secondary" href="tel:+14178523028">Call 417-852-3028</a></div></div>
+<section class="section alt" id="agreement"><div class="wrap"><h2>Service Agreement &amp; Signature</h2><p class="lead">Review the proposed service terms below before signing. This is a draft agreement; the final business contract should be reviewed and approved before use.</p><div class="contract-wrap"><h3>Redeemed Mobile Mechanic — Draft Service Agreement</h3><p><strong>Service location:</strong> Customer-provided location within the agreed service area.</p><ol><li><strong>Authorization:</strong> The customer authorizes inspection and only the repair work and charges separately approved by the customer.</li><li><strong>Estimates:</strong> Diagnostics, labor, parts, travel charges and applicable fees will be disclosed for customer approval before chargeable work begins.</li><li><strong>Additional work:</strong> Any additional work or cost requires the customer's approval.</li><li><strong>Access and safety:</strong> The customer agrees to provide safe, lawful access to the vehicle. Work may be postponed if conditions are unsafe.</li><li><strong>Deposits:</strong> A deposit may be required on a case-by-case basis depending on the type and scope of work, parts or materials needed, and estimated costs. Any required deposit amount, payment deadline, and whether it is refundable will be explained to the customer and agreed upon before work begins. Deposits are not required for every service.</li>
+<li><strong>Payment:</strong> Payment method and timing will be agreed before service. No automatic payment is collected by this page.</li><li><strong>Limitations:</strong> Repairs depend on parts availability, vehicle condition and safe working conditions. Any warranty terms must be provided separately in writing.</li></ol><form action="https://formsubmit.co/417redeemed@gmail.com" id="agreementForm" method="POST"><input name="_subject" type="hidden" value="Signed draft service agreement - Redeemed Mobile Mechanic"/><input name="_template" type="hidden" value="table"/><input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/><label for="agreementName">Customer full name</label><input autocomplete="name" id="agreementName" name="customer_name" required=""/><label for="agreementEmail">Customer email</label><input autocomplete="email" id="agreementEmail" name="customer_email" required="" type="email"/><label for="agreementPhone">Phone number</label><input id="agreementPhone" name="customer_phone" required="" type="tel"/><label for="agreementVehicle">Vehicle year, make and model</label><input id="agreementVehicle" name="vehicle" required=""/><label for="agreementDate">Date</label><input id="agreementDate" name="date" required="" type="date"/><label for="signatureCanvas">Draw your signature below</label><canvas aria-label="Customer signature drawing area" class="signature-pad" id="signatureCanvas"></canvas><input id="signatureImage" name="signature_image" type="hidden"/><div class="signature-actions"><button id="clearSignature" type="button">Clear signature</button></div><label><input id="agreementConsent" required="" style="width:auto" type="checkbox"/> I have read and agree to the draft terms above and consent to use of my electronic signature.</label><p class="contract-note">Your signed information is submitted through FormSubmit to the business email. Signature data is encoded into the form; verify receipt and retention before using this for real customers.</p><button class="submit" type="submit">Submit Signed Agreement</button></form></div></div></section><div class="card" id="contact"><h2>Request Mobile Service</h2><p class="lead">Serving the 417 area. Tell us what your vehicle needs and we'll get back to you.</p><form action="https://formsubmit.co/417redeemed@gmail.com" method="POST">
+<input name="_subject" type="hidden" value="New service request - Redeemed Mobile Mechanic"/>
+<input name="_template" type="hidden" value="table"/>
+<input aria-hidden="true" autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
+<div class="field"><input autocomplete="name" name="name" placeholder="Your name" required="" type="text"/></div>
+<div class="field"><input autocomplete="tel" name="phone" placeholder="Phone number" required="" type="tel"/></div>
+<div class="field"><input autocomplete="email" name="email" placeholder="Email (optional)" type="email"/></div>
+<div class="field"><input name="vehicle" placeholder="Vehicle: year, make &amp; model"/></div>
+<div class="field"><input name="service_location" placeholder="City or ZIP code"/></div>
+<div class="field"><select name="service" required=""><option disabled="" selected="" value="">What do you need?</option><option>Diagnostic / Check Engine</option><option>Brakes</option><option>Battery / Starting</option><option>Oil / Maintenance</option><option>Electrical</option><option>Other</option></select></div>
+<div class="field"><textarea name="problem" placeholder="Describe the problem"></textarea></div>
+<button class="submit" type="submit">Send Service Request</button>
+<p style="font-size:.8rem;opacity:.8">Requests are delivered by FormSubmit. The first submission requires email confirmation to activate delivery.</p>
+</form></div></section>
+<section class="section alt" id="services"><div class="wrap"><h2>Mobile repair without the shop hassle.</h2><p class="lead">From routine maintenance to troubleshooting, we bring the tools and know-how to you.</p><div class="grid"><article class="service"><div class="icon">🔧</div><h3>Diagnostics</h3><p>Find the cause of warning lights, drivability problems, and hard-to-track issues.</p></article><article class="service"><div class="icon">🛑</div><h3>Brakes</h3><p>Brake inspections, pads, rotors, and other common brake repairs.</p></article><article class="service"><div class="icon">🔋</div><h3>Battery &amp; Starting</h3><p>Help with dead batteries, no-start conditions, charging systems, and related issues.</p></article><article class="service"><div class="icon">🛢️</div><h3>Maintenance</h3><p>Convenient oil service and other routine maintenance where your vehicle sits.</p></article><article class="service"><div class="icon">⚡</div><h3>Electrical</h3><p>Troubleshooting for lights, power issues, sensors, and other electrical problems.</p></article><article class="service"><div class="icon">🚗</div><h3>And More</h3><p>Don't see your issue? Contact us and we'll let you know how we can help.</p></article><div class="service"><div class="icon">🛣️</div><h3>Roadside Assistance</h3><p>Mobile roadside help, including no-start troubleshooting and battery-related issues. Call to confirm availability.</p></div><div class="service"><div class="icon">🏍️</div><h3>Small-Engine Repair</h3><p>Contact us about motorcycle and small-engine service and repair needs.</p></div></div></div></section>
+<section class="section" id="how"><div class="wrap"><h2>Simple from start to finish.</h2><div class="steps"><div class="step"><strong>01</strong><h3>Tell us what's wrong</h3><p>Call or send a service request with your vehicle details and symptoms.</p></div><div class="step"><strong>02</strong><h3>We come to you</h3><p>Skip the tow and shop waiting room. We meet you at a convenient location.</p></div><div class="step"><strong>03</strong><h3>Get back on the road</h3><p>We'll diagnose the issue, explain your options, and complete the service when possible.</p></div></div></div></section>
+<section class="wrap section"><div class="banner"><div><h2>Your car. Your location. Our tools.</h2><p>Professional mobile mechanic service throughout the 417 area.</p></div><a class="btn" href="#contact">Request Service</a></div></section>
+</main>
+<section aria-label="Our guiding scripture" class="section" style="text-align:center;padding:42px 16px"><div class="wrap"><p style="font-size:1.3rem;font-weight:700;line-height:1.6">“And whatsoever ye do, do it heartily, as to the Lord, and not unto men;”</p><p style="font-weight:700;color:var(--accent)">Colossians 3:23 (KJV)</p><p>Faith • Integrity • Honest Service</p></div></section>
+<footer class="footer"><div class="wrap">© 2026 Redeemed Mobile Mechanic · Serving the 417 area · <a href="tel:+14178523028">417-852-3028</a> · <a href="mailto:417redeemed@gmail.com">417redeemed@gmail.com</a> · <a href="#contact">Request Service</a></div></footer>
+</div>
 <script>
-(function(){
-const canvas=document.getElementById('signaturePad');
-const ctx=canvas.getContext('2d');
-let drawing=false,signed=false;
-function position(e){const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};}
-canvas.addEventListener('pointerdown',e=>{e.preventDefault();drawing=true;canvas.setPointerCapture(e.pointerId);const p=position(e);ctx.beginPath();ctx.moveTo(p.x,p.y);});
-canvas.addEventListener('pointermove',e=>{if(!drawing)return;e.preventDefault();const p=position(e);ctx.lineWidth=2;ctx.lineCap='round';ctx.lineTo(p.x,p.y);ctx.stroke();signed=true;});
-canvas.addEventListener('pointerup',()=>drawing=false);
-canvas.addEventListener('pointercancel',()=>drawing=false);
-document.getElementById('clearSignature').onclick=()=>{ctx.clearRect(0,0,canvas.width,canvas.height);signed=false;};
-document.getElementById('contractForm').onsubmit=e=>{
-e.preventDefault();
-if(!signed){document.getElementById('contractMessage').textContent='Please sign before continuing.';return;}
-const name=document.getElementById('contractName').value;
-const vehicle=document.getElementById('contractVehicle').value;
-const email=document.getElementById('contractEmail').value;
-const body='Signed contract request\nCustomer: '+name+'\nVehicle: '+vehicle+'\nEmail: '+email+'\nCustomer accepted contract terms.\nSignature must be saved separately; this email does not attach it.';
-document.getElementById('contractMessage').textContent='Your email app will open. This does not send or attach your signature automatically.';
-window.location.href='mailto:417redeemed@gmail.com?subject='+encodeURIComponent('Service Contract - '+name)+'&body='+encodeURIComponent(body);
-};
-})();
-</script>
-<footer>
-  <p>Redeemed Mobile Mechanic</p>
-  <p>Serving the 417 Area</p>
-</footer>
-
-<script>
-document.getElementById("serviceForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const get = id => document.getElementById(id).value.trim();
-
-  const subject = "Service Request - Redeemed Mobile Mechanic";
-  const body =
-    "Name: " + get("name") + "\n" +
-    "Phone: " + get("phone") + "\n" +
-    "Location: " + get("location") + "\n" +
-    "Service: " + get("service") + "\n" +
-    "Details: " + get("details");
-
-  const link = "mailto:417redeemed@gmail.com?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
-
-  document.getElementById("message").textContent =
-    "Your email app should open. Press Send there to submit your request.";
-
-  window.location.href = link;
-});
-</script>
-</body>
+(()=>{const menu=document.querySelector('.mobile-menu'),links=document.querySelector('.mobile-links');if(menu&&links){menu.addEventListener('click',()=>{let open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));links.style.display=open?'none':'flex'});links.addEventListener('click',()=>{links.style.display='none';menu.setAttribute('aria-expanded','false')})}const c=document.getElementById('signatureCanvas'),f=document.getElementById('agreementForm');if(!c||!f)return;const ctx=c.getContext('2d');let signed=false,drawing=false;function resize(){const old=signed?c.toDataURL():null;const r=c.getBoundingClientRect();c.width=Math.round(r.width*devicePixelRatio);c.height=Math.round(180*devicePixelRatio);ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);ctx.lineWidth=2.5;ctx.lineCap='round';ctx.strokeStyle='#152238';if(old){let im=new Image();im.onload=()=>ctx.drawImage(im,0,0,r.width,180);im.src=old}}resize();window.addEventListener('resize',resize);function pos(e){const r=c.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}c.addEventListener('pointerdown',e=>{drawing=true;c.setPointerCapture(e.pointerId);let [x,y]=pos(e);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+.1,y+.1);ctx.stroke();signed=true});c.addEventListener('pointermove',e=>{if(!drawing)return;let [x,y]=pos(e);ctx.lineTo(x,y);ctx.stroke()});['pointerup','pointercancel'].forEach(t=>c.addEventListener(t,()=>drawing=false));document.getElementById('clearSignature').addEventListener('click',()=>{ctx.clearRect(0,0,c.width,c.height);signed=false});f.addEventListener('submit',e=>{if(!signed){e.preventDefault();alert('Please draw your signature before submitting.');return}document.getElementById('signatureImage').value=c.toDataURL('image/png')})})();
+</script></body>
 </html>
-
